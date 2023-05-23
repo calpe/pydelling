@@ -93,6 +93,7 @@ class PflotranObservationPointReader(BaseReader):
     def plot_variable(self, variable,
                       delete_previous=True,
                       label=None ) -> plt.Axes:
+        """ todo_test: improve variable to plot. """
         logger.info(f'Creating lineplot of {variable}')
         if delete_previous:
             plt.clf()
