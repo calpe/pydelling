@@ -94,6 +94,8 @@ class PflotranObservationPointReader(BaseReader):
                       delete_previous=True,
                       label=None ) -> plt.Axes:
         logger.info(f'Creating lineplot of {variable}')
+        if variable not in self.results.keys():
+            raise ValueError(f"variable should be one of: {self.results.keys()}")
         if delete_previous:
             plt.clf()
         lineplot: plt.Axes = plt.plot(self.time_series,
